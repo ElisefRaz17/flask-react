@@ -12,8 +12,8 @@ import openai
 app = Flask(__name__)
 # app = FastAPI()
 CORS(app)
-
-openai.api_key = "sk-RhxY8bsGx0ua4orB3KQP0Lg4ZceFrC1rN7HUpI-CmZT3BlbkFJC9kxQrlTUaApnaSxgn4eQgevNd1jJbzmVmD_9cMF4A"
+load_dotenv()
+openai.api_key = os.getenv("OPEN_AI_KEY")
 # os.getenv("OPENAI_API_KEY")
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SERVER_NAME'] = 'localhost:5000'
